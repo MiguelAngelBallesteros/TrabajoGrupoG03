@@ -5,8 +5,11 @@ public class Contenedores {
     private boolean inspeccion;
     private int prioridad;
     private char [] descripcion=new char[100];
+    private String desc=new String(descripcion);
     private char [] empresa_envio=new char [20];
+    private String emp_envio=new String(empresa_envio);
     private char [] empresa_recibe=new char [20];
+    private String emp_recibe=new String(empresa_recibe);
 
     public Contenedores(int identificador, int peso, String país_procedencia, boolean inspeccion, int prioridad, char [] descripcion, char [] empresa_envio, char [] empresa_recibe){
         this.identificador=identificador;
