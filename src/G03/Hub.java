@@ -13,7 +13,7 @@ public class Hub {
         }
     }
 
-    public String toString() {
+    public String PlanoHub() {
         String s = " ";
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 12; j++) {
@@ -28,7 +28,7 @@ public class Hub {
         return s;
     }
     public String mostrar_datos(int id){
-        String datos=new String();
+        String datos;
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++){
                 if(c[i][j].getIdentificador()==id){
