@@ -4,14 +4,11 @@ public class Contenedores {
     private String país_procedencia;
     private boolean inspeccion;
     private int prioridad;
-    private char [] descripcion=new char[100];
-    private String desc=new String(descripcion);
-    private char [] empresa_envio=new char [20];
-    private String emp_envio=new String(empresa_envio);
-    private char [] empresa_recibe=new char [20];
-    private String emp_recibe=new String(empresa_recibe);
+    private String [] descripcion=new String [100];
+    private String [] empresa_envio=new String [20];
+    private String [] empresa_recibe=new String [20];
 
-    public Contenedores(int identificador, int peso, String país_procedencia, boolean inspeccion, int prioridad, char [] descripcion, char [] empresa_envio, char [] empresa_recibe){
+    public Contenedores(int identificador, int peso, String país_procedencia, boolean inspeccion, int prioridad, String [] descripcion, String [] empresa_envio, String [] empresa_recibe){
         this.identificador=identificador;
         this.peso=peso;
         this.país_procedencia=país_procedencia;
@@ -42,15 +39,15 @@ public class Contenedores {
         this.prioridad = prioridad;
     }
 
-    public void setDescripcion(char[] descripcion) {
+    public void setDescripcion(String[] descripcion) {
         this.descripcion = descripcion;
     }
 
-    public void setEmpresa_envio(char[] empresa_envio) {
+    public void setEmpresa_envio(String[] empresa_envio) {
         this.empresa_envio = empresa_envio;
     }
 
-    public void setEmpresa_recibe(char[] empresa_recibe) {
+    public void setEmpresa_recibe(String[] empresa_recibe) {
         this.empresa_recibe = empresa_recibe;
     }
 
@@ -74,15 +71,15 @@ public class Contenedores {
         return prioridad;
     }
 
-    public char[] getDescripcion() {
+    public String[] getDescripcion() {
         return descripcion;
     }
 
-    public char[] getEmpresa_envio() {
+    public String[] getEmpresa_envio() {
         return empresa_envio;
     }
 
-    public char[] getEmpresa_recibe() {
+    public String[] getEmpresa_recibe() {
         return empresa_recibe;
     }
 }
