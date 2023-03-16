@@ -3,17 +3,17 @@ package G03;
 public class Contenedores {
     private int identificador;
     private int peso;
-    private String país_procedencia;
+    private String pais_procedencia;
     private boolean inspeccion;
     private int prioridad;
-    private String [] descripcion=new String [100];
-    private String [] empresa_envio=new String [20];
-    private String [] empresa_recibe=new String [20];
+    private char [] descripcion=new char [100];
+    private char [] empresa_envio=new char [20];
+    private char [] empresa_recibe=new char [20];
 
-    public Contenedores(int identificador, int peso, String país_procedencia, boolean inspeccion, int prioridad, String [] descripcion, String [] empresa_envio, String [] empresa_recibe){
+    public Contenedores(int identificador, int peso, String pais_procedencia, boolean inspeccion, int prioridad, char [] descripcion, char [] empresa_envio, char [] empresa_recibe){
         this.identificador=identificador;
         this.peso=peso;
-        this.país_procedencia=país_procedencia;
+        this.pais_procedencia=pais_procedencia;
         this.inspeccion=inspeccion;
         this.prioridad=prioridad;
         this.descripcion=descripcion;
@@ -29,8 +29,8 @@ public class Contenedores {
         this.peso = peso;
     }
 
-    public void setPaís_procedencia(String país_procedencia) {
-        this.país_procedencia = país_procedencia;
+    public void setPais_procedencia(String pais_procedencia) {
+        this.pais_procedencia = pais_procedencia;
     }
 
     public void setInspeccion(boolean inspeccion) {
@@ -41,15 +41,15 @@ public class Contenedores {
         this.prioridad = prioridad;
     }
 
-    public void setDescripcion(String[] descripcion) {
+    public void setDescripcion(char[] descripcion) {
         this.descripcion = descripcion;
     }
 
-    public void setEmpresa_envio(String[] empresa_envio) {
+    public void setEmpresa_envio(char[] empresa_envio) {
         this.empresa_envio = empresa_envio;
     }
 
-    public void setEmpresa_recibe(String[] empresa_recibe) {
+    public void setEmpresa_recibe(char[] empresa_recibe) {
         this.empresa_recibe = empresa_recibe;
     }
 
@@ -61,8 +61,8 @@ public class Contenedores {
         return peso;
     }
 
-    public String getPaís_procedencia() {
-        return país_procedencia;
+    public String getPais_procedencia() {
+        return pais_procedencia;
     }
 
     public boolean isInspeccion() {
@@ -73,21 +73,21 @@ public class Contenedores {
         return prioridad;
     }
 
-    public String[] getDescripcion() {
+    public char[] getDescripcion() {
         return descripcion;
     }
 
-    public String[] getEmpresa_envio() {
+    public char[] getEmpresa_envio() {
         return empresa_envio;
     }
 
-    public String[] getEmpresa_recibe() {
+    public char[] getEmpresa_recibe() {
         return empresa_recibe;
     }
     public String toString(){
         String resultado="";
         resultado= "La información de este contenedor es:\n"+"-identificador: "+identificador+
-                "\n -peso: "+peso+"\n -pais:"+país_procedencia+"\n -¿ha sido inspeccionado? "+inspeccion+"\n-descripcion: "+descripcion +"\n-empresa que lo envia: "+empresa_envio+"\n -empresa que lo va a recibir:"+empresa_recibe;
+                "\n -peso: "+peso+"\n -pais:"+pais_procedencia+"\n -¿ha sido inspeccionado? "+inspeccion+"\n-descripcion: "+descripcion +"\n-empresa que lo envia: "+empresa_envio+"\n -empresa que lo va a recibir:"+empresa_recibe;
         return resultado;
     }
 }
