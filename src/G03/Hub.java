@@ -27,4 +27,17 @@ public class Hub {
         }
         return s;
     }
+    public String mostrar_datos(int id){
+        String datos=new String();
+        for(int i=0;i<10;i++){
+            for(int j=0;j<12;j++){
+                if(c[i][j].getIdentificador()==id){
+                    datos=c[i][j].toString();
+                    return datos;
+                }
+            }
+        }
+        datos="Ese contenedor no esta en el hub";
+        return datos;
+    }
 }
