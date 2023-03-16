@@ -1,3 +1,7 @@
+package G03;
+
+import G03.Contenedores;
+
 public class Hub {
     private Contenedores[][] c;
 
