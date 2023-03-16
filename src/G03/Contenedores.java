@@ -1,3 +1,5 @@
+package G03;
+
 public class Contenedores {
     private int identificador;
     private int peso;
