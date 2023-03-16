@@ -41,15 +41,15 @@ public class Hub {
         return datos;
     }
 
-    public String contenedores_país(String pais){
-        int numPais=0;
+    public String contenedores_pais(String pais){
+        int num_pais=0;
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++) {
                 if (c[i][j].getPais_procedencia() == pais) {
-                    numPais++;
+                    num_pais++;
                 }
             }
         }
-        return "El número de contenedores de " + pais + " es de " + numPais;
+        return "El número de contenedores de " + pais + " es de " + num_pais;
     }
 }
