@@ -84,4 +84,9 @@ public class Contenedores {
     public String[] getEmpresa_recibe() {
         return empresa_recibe;
     }
+    public String toString(){
+        String resultado="";
+        resultado= "La información de este contenedor es:\n"+"-identificador: "+identificador+ "\n -peso: "+peso+"\n";
+        return resultado;
+    }
 }
