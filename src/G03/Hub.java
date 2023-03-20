@@ -52,4 +52,17 @@ public class Hub {
         }
         return "El número de contenedores de " + pais + " es de " + num_pais;
     }
+
+    public int desapila_contenedor(int columna){
+        for(int i=0;i<10;i++){
+            if(c[i][columna].getIdentificador()!=0){
+                c[i][columna].setIdentificador(0);
+               return 0;
+            }
+            else {
+                System.out.println("En la posicion "+(i+1)+", "+(columna+1)+" no hay contenedor");
+            }
+        }
+        return 0;
+    }
 }

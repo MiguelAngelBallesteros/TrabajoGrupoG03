@@ -15,7 +15,12 @@ public class Contenedores {
         this.peso=peso;
         this.pais_procedencia=pais_procedencia;
         this.inspeccion=inspeccion;
-        this.prioridad=prioridad;
+        if(prioridad<1 || prioridad>3){
+            System.out.println("La prioridad debe ser un valor entre 1 y 3");
+        }
+        else {
+            this.prioridad = prioridad;
+        }
         this.descripcion=descripcion;
         this.empresa_envio=empresa_envio;
         this.empresa_recibe=empresa_recibe;
@@ -38,7 +43,12 @@ public class Contenedores {
     }
 
     public void setPrioridad(int prioridad) {
-        this.prioridad = prioridad;
+        if(prioridad<1 || prioridad>3){
+            System.out.println("La prioridad debe ser un valor entre 1 y 3");
+        }
+        else {
+            this.prioridad = prioridad;
+        }
     }
 
     public void setDescripcion(char[] descripcion) {
