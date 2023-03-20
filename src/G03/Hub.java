@@ -65,4 +65,30 @@ public class Hub {
         }
         return 0;
     }
+    public void ApilarContenedor(Contenedores contenedores) {
+        if (contenedores.getPrioridad() == 1) {
+            for (int i = 10; i > 0; i--) {
+                if (c[i][0].getIdentificador() == 0) {
+                    c[i][0] = contenedores;
+                }
+            }
+        } else if (contenedores.getPrioridad() == 2) {
+            for (int i = 10; i > 0; i--) {
+                if (c[i][1].getIdentificador() == 0) {
+                    c[i][1] = contenedores;
+                }
+            }
+        } else if (contenedores.getPrioridad() == 3) {
+            for (int i = 10; i > 0; i--) {
+                for (int j = 12; j > 2; j--) {
+                    if (c[i][j].getIdentificador() == 0) {
+                        c[i][j] = contenedores;
+                        break;
+                    }
+                }
+            }
+        } else {
+            System.out.println("La prioridad del contenedor debe estar entre 1 y 3");
+        }
+    }
 }
