@@ -9,6 +9,7 @@ public class Hub {
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++){
                 c[i][j].setIdentificador(0);
+                c[i][j]=new Contenedores();
             }
         }
     }
