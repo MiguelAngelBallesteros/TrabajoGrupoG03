@@ -1,6 +1,6 @@
 package G03;
 
-public class Contenedores {
+public class Contenedores{
     private int identificador;
     private int peso;
     private String pais_procedencia;
