@@ -10,7 +10,7 @@ public class Contenedores{
     private char [] empresa_envio=new char [20];
     private char [] empresa_recibe=new char [20];
 
-    public Contenedores(){
+    public Contenedores(int identificador, int peso, String pais_procedencia, boolean inspeccion, int prioridad, char [] descripcion, char [] empresa_envio, char [] empresa_recibe){
         this.identificador=identificador;
         this.peso=peso;
         this.pais_procedencia=pais_procedencia;

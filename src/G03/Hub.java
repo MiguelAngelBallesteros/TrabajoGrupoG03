@@ -8,8 +8,7 @@ public class Hub {
     public Hub() {
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++){
-                c[i][j].setIdentificador(0);
-                c[i][j]=new Contenedores();
+                c[i][j]=new Contenedores(0,0,"a",false,0, "a".toCharArray(), "a".toCharArray(), "a".toCharArray());
             }
         }
     }
