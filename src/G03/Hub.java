@@ -25,6 +25,7 @@ public class Hub {
             }
             s=s+"\n";
         }
+        System.out.println(s);
         return s;
     }
     public String mostrar_datos(int id){
