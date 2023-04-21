@@ -16,7 +16,6 @@ public class Contenedores{
         this.pais_procedencia=pais_procedencia;
         this.inspeccion=inspeccion;
         if(prioridad<1 || prioridad>3){
-            System.out.println("La prioridad debe ser un valor entre 1 y 3");
         }
         else {
             this.prioridad = prioridad;
@@ -44,7 +43,6 @@ public class Contenedores{
 
     public void setPrioridad(int prioridad) {
         if(prioridad<1 || prioridad>3){
-            System.out.println("La prioridad debe ser un valor entre 1 y 3");
         }
         else {
             this.prioridad = prioridad;
