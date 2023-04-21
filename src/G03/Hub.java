@@ -3,12 +3,13 @@ package G03;
 import G03.Contenedores;
 
 public class Hub {
-    private Contenedores[][] c=new Contenedores[10][12];
+    private Contenedores[][] c;
 
     public Hub() {
+        c=new Contenedores[10][12];
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++){
-                this.c[i][j]=new Contenedores(0,0,"a",false,0, "a".toCharArray(), "a".toCharArray(), "a".toCharArray());
+                this.c[i][j]=null;
             }
         }
     }
@@ -17,10 +18,10 @@ public class Hub {
         String s = " ";
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 12; j++) {
-                if (this.c[i][j].getIdentificador() != 0) {
-                    s = s + "|" + "Ocupado" + "|";
-                } else {
+                if (this.c[i][j]==null) {
                     s = s + "|" + "Libre" + "|";
+                } else {
+                    s = s + "|" + "Ocupado" + "|";
                 }
             }
             s=s+"\n";
@@ -71,20 +72,20 @@ public class Hub {
     public void ApilarContenedor(Contenedores contenedores) {
         if (contenedores.getPrioridad() == 1) {
             for (int i = 9; i >= 0; i--) {
-                if (this.c[i][0].getIdentificador() == 0) {
+                if (this.c[i][0]==null) {
                     this.c[i][0]=contenedores;
                 }
             }
         } else if (contenedores.getPrioridad() == 2) {
             for (int i = 9; i >= 0; i--) {
-                if (this.c[i][1].getIdentificador() == 0) {
+                if (this.c[i][1]==null) {
                     this.c[i][1]=contenedores;
                 }
             }
         } else if (contenedores.getPrioridad() == 3) {
             for (int i = 9; i >= 0; i--) {
                 for (int j = 11; j > 1; j--) {
-                    if (this.c[i][j].getIdentificador() == 0) {
+                    if (this.c[i][j]==null) {
                         this.c[i][j]=contenedores;
                         break;
                     }
