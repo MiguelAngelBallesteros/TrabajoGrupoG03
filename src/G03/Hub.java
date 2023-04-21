@@ -8,7 +8,7 @@ public class Hub {
     public Hub() {
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++){
-                c[i][j]=new Contenedores(0,0,"a",false,0, "a".toCharArray(), "a".toCharArray(), "a".toCharArray());
+                this.c[i][j]=new Contenedores(0,0,"a",false,0, "a".toCharArray(), "a".toCharArray(), "a".toCharArray());
             }
         }
     }
@@ -17,7 +17,7 @@ public class Hub {
         String s = " ";
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 12; j++) {
-                if (c[i][j].getIdentificador() != 0) {
+                if (this.c[i][j].getIdentificador() != 0) {
                     s = s + "|" + "Ocupado" + "|";
                 } else {
                     s = s + "|" + "Libre" + "|";
@@ -32,8 +32,8 @@ public class Hub {
         String datos;
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++){
-                if(c[i][j].getIdentificador()==id){
-                    datos=c[i][j].toString();
+                if(this.c[i][j].getIdentificador()==id){
+                    datos=this.c[i][j].toString();
                     System.out.println(datos);
                     return datos;
                 }
@@ -47,7 +47,7 @@ public class Hub {
         int num_pais=0;
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++) {
-                if (c[i][j].getPais_procedencia() == pais) {
+                if (this.c[i][j].getPais_procedencia() == pais) {
                     num_pais++;
                 }
             }
@@ -57,8 +57,8 @@ public class Hub {
 
     public int desapila_contenedor(int columna){
         for(int i=0;i<10;i++){
-            if(c[i][columna].getIdentificador()!=0){
-                c[i][columna].setIdentificador(0);
+            if(this.c[i][columna].getIdentificador()!=0){
+                this.c[i][columna].setIdentificador(0);
                 System.out.println("Se ha desapilado correctamente");
                return 0;
             }
@@ -71,42 +71,42 @@ public class Hub {
     public void ApilarContenedor(Contenedores contenedores) {
         if (contenedores.getPrioridad() == 1) {
             for (int i = 9; i >= 0; i--) {
-                if (c[i][0].getIdentificador() == 0) {
-                    c[i][0].setIdentificador(contenedores.getIdentificador());
-                    c[i][0].setPeso(contenedores.getPeso());
-                    c[i][0].setPais_procedencia(contenedores.getPais_procedencia());
-                    c[i][0].setPrioridad(contenedores.getPrioridad());
-                    c[i][0].setInspeccion(contenedores.isInspeccion());
-                    c[i][0].setDescripcion(contenedores.getDescripcion());
-                    c[i][0].setEmpresa_envio(contenedores.getEmpresa_envio());
-                    c[i][0].setEmpresa_recibe(contenedores.getEmpresa_recibe());
+                if (this.c[i][0].getIdentificador() == 0) {
+                    this.c[i][0].setIdentificador(contenedores.getIdentificador());
+                    this.c[i][0].setPeso(contenedores.getPeso());
+                    this.c[i][0].setPais_procedencia(contenedores.getPais_procedencia());
+                    this.c[i][0].setPrioridad(contenedores.getPrioridad());
+                    this.c[i][0].setInspeccion(contenedores.isInspeccion());
+                    this.c[i][0].setDescripcion(contenedores.getDescripcion());
+                    this.c[i][0].setEmpresa_envio(contenedores.getEmpresa_envio());
+                    this.c[i][0].setEmpresa_recibe(contenedores.getEmpresa_recibe());
                 }
             }
         } else if (contenedores.getPrioridad() == 2) {
             for (int i = 9; i >= 0; i--) {
-                if (c[i][1].getIdentificador() == 0) {
-                    c[i][1].setIdentificador(contenedores.getIdentificador());
-                    c[i][1].setPeso(contenedores.getPeso());
-                    c[i][1].setPais_procedencia(contenedores.getPais_procedencia());
-                    c[i][1].setPrioridad(contenedores.getPrioridad());
-                    c[i][1].setInspeccion(contenedores.isInspeccion());
-                    c[i][1].setDescripcion(contenedores.getDescripcion());
-                    c[i][1].setEmpresa_envio(contenedores.getEmpresa_envio());
-                    c[i][1].setEmpresa_recibe(contenedores.getEmpresa_recibe());
+                if (this.c[i][1].getIdentificador() == 0) {
+                    this.c[i][1].setIdentificador(contenedores.getIdentificador());
+                    this.c[i][1].setPeso(contenedores.getPeso());
+                    this.c[i][1].setPais_procedencia(contenedores.getPais_procedencia());
+                    this.c[i][1].setPrioridad(contenedores.getPrioridad());
+                    this.c[i][1].setInspeccion(contenedores.isInspeccion());
+                    this.c[i][1].setDescripcion(contenedores.getDescripcion());
+                    this.c[i][1].setEmpresa_envio(contenedores.getEmpresa_envio());
+                    this.c[i][1].setEmpresa_recibe(contenedores.getEmpresa_recibe());
                 }
             }
         } else if (contenedores.getPrioridad() == 3) {
             for (int i = 9; i >= 0; i--) {
                 for (int j = 11; j > 1; j--) {
-                    if (c[i][j].getIdentificador() == 0) {
-                        c[i][j].setIdentificador(contenedores.getIdentificador());
-                        c[i][j].setPeso(contenedores.getPeso());
-                        c[i][j].setPais_procedencia(contenedores.getPais_procedencia());
-                        c[i][j].setPrioridad(contenedores.getPrioridad());
-                        c[i][j].setInspeccion(contenedores.isInspeccion());
-                        c[i][j].setDescripcion(contenedores.getDescripcion());
-                        c[i][j].setEmpresa_envio(contenedores.getEmpresa_envio());
-                        c[i][j].setEmpresa_recibe(contenedores.getEmpresa_recibe());
+                    if (this.c[i][j].getIdentificador() == 0) {
+                        this.c[i][j].setIdentificador(contenedores.getIdentificador());
+                        this.c[i][j].setPeso(contenedores.getPeso());
+                        this.c[i][j].setPais_procedencia(contenedores.getPais_procedencia());
+                        this.c[i][j].setPrioridad(contenedores.getPrioridad());
+                        this.c[i][j].setInspeccion(contenedores.isInspeccion());
+                        this.c[i][j].setDescripcion(contenedores.getDescripcion());
+                        this.c[i][j].setEmpresa_envio(contenedores.getEmpresa_envio());
+                        this.c[i][j].setEmpresa_recibe(contenedores.getEmpresa_recibe());
                         break;
                     }
                 }
