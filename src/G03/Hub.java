@@ -34,6 +34,7 @@ public class Hub {
             for(int j=0;j<12;j++){
                 if(c[i][j].getIdentificador()==id){
                     datos=c[i][j].toString();
+                    System.out.println(datos);
                     return datos;
                 }
             }
@@ -71,20 +72,41 @@ public class Hub {
         if (contenedores.getPrioridad() == 1) {
             for (int i = 9; i >= 0; i--) {
                 if (c[i][0].getIdentificador() == 0) {
-                    c[i][0] = contenedores;
+                    c[i][0].setIdentificador(contenedores.getIdentificador());
+                    c[i][0].setPeso(contenedores.getPeso());
+                    c[i][0].setPais_procedencia(contenedores.getPais_procedencia());
+                    c[i][0].setPrioridad(contenedores.getPrioridad());
+                    c[i][0].setInspeccion(contenedores.isInspeccion());
+                    c[i][0].setDescripcion(contenedores.getDescripcion());
+                    c[i][0].setEmpresa_envio(contenedores.getEmpresa_envio());
+                    c[i][0].setEmpresa_recibe(contenedores.getEmpresa_recibe());
                 }
             }
         } else if (contenedores.getPrioridad() == 2) {
             for (int i = 9; i >= 0; i--) {
                 if (c[i][1].getIdentificador() == 0) {
-                    c[i][1] = contenedores;
+                    c[i][1].setIdentificador(contenedores.getIdentificador());
+                    c[i][1].setPeso(contenedores.getPeso());
+                    c[i][1].setPais_procedencia(contenedores.getPais_procedencia());
+                    c[i][1].setPrioridad(contenedores.getPrioridad());
+                    c[i][1].setInspeccion(contenedores.isInspeccion());
+                    c[i][1].setDescripcion(contenedores.getDescripcion());
+                    c[i][1].setEmpresa_envio(contenedores.getEmpresa_envio());
+                    c[i][1].setEmpresa_recibe(contenedores.getEmpresa_recibe());
                 }
             }
         } else if (contenedores.getPrioridad() == 3) {
             for (int i = 9; i >= 0; i--) {
                 for (int j = 11; j > 1; j--) {
                     if (c[i][j].getIdentificador() == 0) {
-                        c[i][j] = contenedores;
+                        c[i][j].setIdentificador(contenedores.getIdentificador());
+                        c[i][j].setPeso(contenedores.getPeso());
+                        c[i][j].setPais_procedencia(contenedores.getPais_procedencia());
+                        c[i][j].setPrioridad(contenedores.getPrioridad());
+                        c[i][j].setInspeccion(contenedores.isInspeccion());
+                        c[i][j].setDescripcion(contenedores.getDescripcion());
+                        c[i][j].setEmpresa_envio(contenedores.getEmpresa_envio());
+                        c[i][j].setEmpresa_recibe(contenedores.getEmpresa_recibe());
                         break;
                     }
                 }
