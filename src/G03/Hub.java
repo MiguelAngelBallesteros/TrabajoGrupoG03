@@ -57,6 +57,7 @@ public class Hub {
         for(int i=0;i<10;i++){
             if(c[i][columna].getIdentificador()!=0){
                 c[i][columna].setIdentificador(0);
+                System.out.println("Se ha desapilado correctamente");
                return 0;
             }
             else {
