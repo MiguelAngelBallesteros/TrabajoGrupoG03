@@ -72,41 +72,20 @@ public class Hub {
         if (contenedores.getPrioridad() == 1) {
             for (int i = 9; i >= 0; i--) {
                 if (this.c[i][0].getIdentificador() == 0) {
-                    this.c[i][0].setIdentificador(contenedores.getIdentificador());
-                    this.c[i][0].setPeso(contenedores.getPeso());
-                    this.c[i][0].setPais_procedencia(contenedores.getPais_procedencia());
-                    this.c[i][0].setPrioridad(contenedores.getPrioridad());
-                    this.c[i][0].setInspeccion(contenedores.isInspeccion());
-                    this.c[i][0].setDescripcion(contenedores.getDescripcion());
-                    this.c[i][0].setEmpresa_envio(contenedores.getEmpresa_envio());
-                    this.c[i][0].setEmpresa_recibe(contenedores.getEmpresa_recibe());
+                    this.c[i][0]=contenedores;
                 }
             }
         } else if (contenedores.getPrioridad() == 2) {
             for (int i = 9; i >= 0; i--) {
                 if (this.c[i][1].getIdentificador() == 0) {
-                    this.c[i][1].setIdentificador(contenedores.getIdentificador());
-                    this.c[i][1].setPeso(contenedores.getPeso());
-                    this.c[i][1].setPais_procedencia(contenedores.getPais_procedencia());
-                    this.c[i][1].setPrioridad(contenedores.getPrioridad());
-                    this.c[i][1].setInspeccion(contenedores.isInspeccion());
-                    this.c[i][1].setDescripcion(contenedores.getDescripcion());
-                    this.c[i][1].setEmpresa_envio(contenedores.getEmpresa_envio());
-                    this.c[i][1].setEmpresa_recibe(contenedores.getEmpresa_recibe());
+                    this.c[i][1]=contenedores;
                 }
             }
         } else if (contenedores.getPrioridad() == 3) {
             for (int i = 9; i >= 0; i--) {
                 for (int j = 11; j > 1; j--) {
                     if (this.c[i][j].getIdentificador() == 0) {
-                        this.c[i][j].setIdentificador(contenedores.getIdentificador());
-                        this.c[i][j].setPeso(contenedores.getPeso());
-                        this.c[i][j].setPais_procedencia(contenedores.getPais_procedencia());
-                        this.c[i][j].setPrioridad(contenedores.getPrioridad());
-                        this.c[i][j].setInspeccion(contenedores.isInspeccion());
-                        this.c[i][j].setDescripcion(contenedores.getDescripcion());
-                        this.c[i][j].setEmpresa_envio(contenedores.getEmpresa_envio());
-                        this.c[i][j].setEmpresa_recibe(contenedores.getEmpresa_recibe());
+                        this.c[i][j]=contenedores;
                         break;
                     }
                 }
