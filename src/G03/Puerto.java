@@ -25,7 +25,7 @@ public class Puerto {
             }
         }
     }
-    public void Plano(Contenedores cont) {
+    public void Plano() {
         for (int i = 0; i < 3; i++) {
             Puerto[i].PlanoHub();
             }
