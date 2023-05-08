@@ -1,6 +1,6 @@
 package G03;
 
-import G03.Contenedores;
+import java.util.Objects;
 
 public class Hub {
     private Contenedores[][] c;
@@ -15,51 +15,52 @@ public class Hub {
     }
 
     public String PlanoHub() {
-        String s = " ";
+        StringBuilder constructor=new StringBuilder();
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 12; j++) {
                 if (this.c[i][j]==null) {
-                    s = s + "|" + "Libre" + "|";
+                    constructor.append("|" + "Libre" + "|");
                 } else {
-                    s = s + "|" + "Ocupado" + "|";
+                    constructor.append("|" + "Ocupado" + "|");
                 }
             }
-            s=s+"\n";
+            constructor.append("\n");
         }
-        System.out.println(s);
-        return s;
+        System.out.println(constructor);
+        return constructor.toString();
     }
     public String mostrar_datos(int id){
-        String datos;
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++){
-                if(this.c[i][j].getIdentificador()==id){
-                    datos=this.c[i][j].toString();
-                    System.out.println(datos);
-                    return datos;
+                if(this.c[i][j]!=null){
+                    if(this.c[i][j].getIdentificador()==id) {
+                        System.out.println(this.c[i][j].toString());
+                        return this.c[i][j].toString();
+                    }
                 }
             }
         }
-        datos="Ese contenedor no esta en el hub";
-        return datos;
+        System.out.println("Este contenedor no esta en el hub");
+        return "Ese contenedor no esta en el hub";
     }
 
     public String contenedores_pais(String pais){
         int num_pais=0;
         for(int i=0;i<10;i++){
             for(int j=0;j<12;j++) {
-                if (this.c[i][j].getPais_procedencia() == pais) {
+                if(this.c[i][j]!=null && this.c[i][j].getPais_procedencia().equals(pais)) {
                     num_pais++;
                 }
             }
         }
+        System.out.println("El número de contenedores de " + pais + " es de " + num_pais);
         return "El número de contenedores de " + pais + " es de " + num_pais;
     }
 
     public int desapila_contenedor(int columna){
         for(int i=0;i<10;i++){
-            if(this.c[i][columna].getIdentificador()!=0){
-                this.c[i][columna].setIdentificador(0);
+            if(this.c[i][columna]!=null){
+                this.c[i][columna]=null;
                 System.out.println("Se ha desapilado correctamente");
                return 0;
             }
@@ -72,26 +73,40 @@ public class Hub {
     public void ApilarContenedor(Contenedores contenedores) {
         if (contenedores.getPrioridad() == 1) {
             for (int i = 9; i >= 0; i--) {
-                if (this.c[i][0]==null) {
-                    this.c[i][0]=contenedores;
+                if (this.c[i][0] == null) {
+                    this.c[i][0] = contenedores;
+                    break;
+                }
+                else{
+                    System.out.println("La columna "+1+" se encuentra llena");
                 }
             }
-        } else if (contenedores.getPrioridad() == 2) {
-            for (int i = 9; i >= 0; i--) {
-                if (this.c[i][1]==null) {
-                    this.c[i][1]=contenedores;
-                }
-            }
-        } else if (contenedores.getPrioridad() == 3) {
-            for (int i = 9; i >= 0; i--) {
-                for (int j = 11; j > 1; j--) {
-                    if (this.c[i][j]==null) {
-                        this.c[i][j]=contenedores;
+        }
+         else if (contenedores.getPrioridad() == 2) {
+                for (int i = 9; i >= 0; i--) {
+                    if (this.c[i][1] == null) {
+                        this.c[i][1] = contenedores;
                         break;
+                    }
+                    else{
+                        System.out.println("La columna "+2+" se encuentra llena");
                     }
                 }
             }
-        } else {
+         else if (contenedores.getPrioridad() == 3) {
+                for (int i = 9; i >= 0; i--) {
+                    for (int j = 11; j > 1; j--) {
+                        if (this.c[i][j] == null) {
+                            this.c[i][j] = contenedores;
+                            break;
+                        }
+                        else{
+                            System.out.println("La columna "+j+" se encuentra llena");
+                        }
+                    }
+                }
+            }
+        else {
             System.out.println("La prioridad del contenedor debe estar entre 1 y 3");
         }
     }

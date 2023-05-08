@@ -93,9 +93,9 @@ public class Contenedores{
         return empresa_recibe;
     }
     public String toString(){
-        String resultado="";
-        resultado= "La información de este contenedor es:\n"+"-identificador: "+identificador+
-                "\n -peso: "+peso+"\n -pais:"+pais_procedencia+"\n -¿ha sido inspeccionado? "+inspeccion+"\n-descripcion: "+descripcion +"\n-empresa que lo envia: "+empresa_envio+"\n -empresa que lo va a recibir:"+empresa_recibe;
-        return resultado;
+        return "La información de este contenedor es:\n"+"-identificador: "+identificador+
+                "\n -peso: "+peso+"\n -pais:"+pais_procedencia+"\n -¿ha sido inspeccionado? "+inspeccion+"\n-descripcion: "
+                +descripcion +"\n-empresa que lo envia: "+empresa_envio
+                +"\n -empresa que lo va a recibir:"+empresa_recibe;
     }
 }
