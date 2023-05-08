@@ -5,7 +5,7 @@ public class Puerto {
 
     public Puerto(){
         for(int i=0;i< Puerto.length;i++){
-            Puerto[i]=null;
+            Puerto[i]=new Hub();
         }
     }
 
