@@ -25,20 +25,26 @@ public class Puerto {
             }
         }
     }
-    public void Plano() {
+    public String Plano() {
+        StringBuilder constructor = new StringBuilder();
         for (int i = 0; i < 3; i++) {
-            Puerto[i].PlanoHub();
+            constructor.append(Puerto[i].PlanoHub());
             }
+        return constructor.toString();
         }
-    public void Datos(int id) {
+    public String Datos(int id) {
+        StringBuilder constructor = new StringBuilder();
         for (int i = 0; i < 3; i++) {
-            Puerto[i].mostrar_datos(id);
+            constructor.append(Puerto[i].mostrar_datos(id));
         }
+        return constructor.toString();
     }
-    public void Pais(String Pais) {
+    public String Pais(String Pais) {
+        StringBuilder constructor = new StringBuilder();
         for (int i = 0; i < 3; i++) {
-            Puerto[i].contenedores_pais(Pais);
+            constructor.append(Puerto[i].contenedores_pais(Pais));
         }
+        return constructor.toString();
     }
     }
 

@@ -26,6 +26,7 @@ public class Hub {
             }
             constructor.append("\n");
         }
+        constructor.append("\n");
         System.out.println(constructor);
         return constructor.toString();
     }
